@@ -56,7 +56,7 @@ class QTrainer:
             if not done[idx]:
                 q_new = reward[idx] + self.gamma * torch.max(self.model(next_state[idx]))
 
-            target[idx][torch.argmax(action).item()] = q_new
+            target[idx][torch.argmax(action[idx]).item()] = q_new
 
         # 2: q_new = r + y * max(next_predicted_Q_value) -> only do if not done
         # pred.clone()
