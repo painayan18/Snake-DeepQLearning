@@ -26,21 +26,14 @@ BLUE2 = (0, 100, 255)
 BLACK = (0, 0, 0)
 
 BLOCK_SIZE = 20
-SPEED = 1000
+SPEED = 80
 
 
 class SnakeGameAI:
 
     def __init__(self, w=640, h=480):
-        self.direction = None
         self.w = w
         self.h = h
-
-        self.frame_iteration = None
-        self.food = None
-        self.score = None
-        self.snake = None
-        self.head = None
 
         # init display
         self.display = pygame.display.set_mode((self.w, self.h))

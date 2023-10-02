@@ -7,7 +7,7 @@ from model import Linear_QNet, QTrainer
 from helper import plot
 
 MAX_MEMORY = 100_000
-BATCH_SIZE = 1_000
+BATCH_SIZE = 1000
 LR = 0.001
 
 
@@ -94,6 +94,7 @@ class Agent:
             state0 = torch.tensor(state, dtype=torch.float)
             prediction = self.model(state0)
             move = torch.argmax(prediction).item()
+            final_move[move] = 1
 
         return final_move
 
